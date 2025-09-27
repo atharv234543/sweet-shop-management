@@ -334,14 +334,173 @@ If you encounter any issues or have questions:
 - JWT implementation inspired by industry best practices
 - Responsive design patterns from modern web development
 
+## 🚀 Deployment Guide
+
+### Frontend Deployment (Vercel)
+
+#### Step 1: Prepare Frontend for Vercel
+1. **Navigate to frontend directory**:
+   ```bash
+   cd sweet-shop-frontend
+   ```
+
+2. **Create environment file**:
+   ```bash
+   # Create .env.local file
+   echo "VITE_API_BASE_URL=http://localhost:8080/api" > .env.local
+   ```
+
+3. **Test build locally**:
+   ```bash
+   npm run build
+   ```
+
+#### Step 2: Deploy to Vercel
+
+**Option A: Vercel CLI (Recommended)**
+```bash
+# Install Vercel CLI
+npm i -g vercel
+
+# Login to Vercel
+vercel login
+
+# Deploy from frontend directory
+cd sweet-shop-frontend
+vercel
+
+# Follow the prompts:
+# - Link to existing project or create new? → Create new
+# - Project name → sweet-shop-frontend
+# - Directory → ./
+```
+
+**Option B: GitHub Integration**
+1. Push your code to GitHub
+2. Go to [vercel.com](https://vercel.com)
+3. Click "Import Project"
+4. Connect your GitHub repository
+5. Vercel will automatically detect it's a Vite project
+
+#### Step 3: Configure Environment Variables in Vercel
+1. Go to your Vercel dashboard
+2. Select your project
+3. Go to Settings → Environment Variables
+4. Add:
+   ```
+   VITE_API_BASE_URL=https://your-backend-url.com/api
+   ```
+
+### Backend Deployment Options
+
+Since Vercel doesn't support Java applications, deploy your backend separately:
+
+#### Option 1: Railway (Recommended for beginners)
+```bash
+# Install Railway CLI
+npm install -g @railway/cli
+
+# Login and deploy
+railway login
+railway init
+railway up
+```
+
+#### Option 2: Heroku
+```bash
+# Install Heroku CLI
+# Create a Procfile in sweet-shop-api/:
+echo "web: java -jar target/*.jar" > Procfile
+
+# Deploy
+heroku create
+git push heroku main
+```
+
+#### Option 3: DigitalOcean App Platform
+1. Go to DigitalOcean App Platform
+2. Create new app from GitHub
+3. Configure Java build settings
+4. Set environment variables for database
+
+#### Option 4: AWS/Railway/Render
+- **Railway**: `railway up` (easiest)
+- **Render**: Connect GitHub repo, select Java
+- **AWS**: Use Elastic Beanstalk or EC2
+
+### Database Deployment
+
+#### Option 1: PlanetScale (MySQL-compatible)
+```bash
+# Create database
+# Update application.properties with PlanetScale URL
+```
+
+#### Option 2: Railway Database
+```bash
+# Railway provides free PostgreSQL, but you can use MySQL
+railway add mysql
+```
+
+#### Option 3: AWS RDS
+- Create MySQL instance
+- Update security groups
+- Use connection string in application.properties
+
+### Production Configuration
+
+#### Backend Environment Variables:
+```properties
+# Database
+spring.datasource.url=jdbc:mysql://your-db-host:3306/sweetshop
+spring.datasource.username=your_db_user
+spring.datasource.password=your_db_password
+
+# JWT
+app.jwt.secret=your-production-jwt-secret-here
+app.jwt.expiration-ms=86400000
+
+# CORS for production frontend
+spring.web.cors.allowed-origins=https://your-frontend-domain.vercel.app
+```
+
+#### Frontend Environment Variables:
+```bash
+VITE_API_BASE_URL=https://your-backend-domain.com/api
+```
+
+### Testing Production Deployment
+
+1. **Update CORS**: Add your Vercel domain to backend CORS settings
+2. **Test Registration**: Create an admin account
+3. **Test Purchases**: Add sweets and test buying
+4. **Test Admin Features**: Verify CRUD operations work
+
+### Troubleshooting Deployment
+
+#### Frontend Issues:
+- **Build fails**: Check Node.js version compatibility
+- **API calls fail**: Verify environment variables are set
+- **CORS errors**: Update backend CORS configuration
+
+#### Backend Issues:
+- **Database connection fails**: Check connection string and credentials
+- **Port conflicts**: Use default port or configure custom port
+- **Memory issues**: Increase memory limits in deployment platform
+
+#### Common Fixes:
+```bash
+# Clear build cache
+rm -rf node_modules/.vite
+npm run build
+
+# Check environment variables
+vercel env ls
+```
+
 ---
 
 **Happy coding! 🍬✨**
-- `POST /api/auth/login` - User login
-
-### Sweets (Protected)
-- `GET /api/sweets` - Get all sweets
-- `GET /api/sweets/search` - Search sweets with filters
 - `GET /api/sweets/{id}` - Get sweet by ID
 - `POST /api/sweets` - Add new sweet (Admin only)
 - `PUT /api/sweets/{id}` - Update sweet (Admin only)
