@@ -253,38 +253,49 @@ SweetShopManager/
 
 ## Screenshots :
 Login:
-<img width="1920" height="1020" alt="Sweet Shop Management System - Google Chrome 27-09-2025 14_26_56" src="https://github.com/user-attachments/assets/352534e3-c992-420e-b0ad-c12ae4032ee7" />
+<img width="1920" height="869" alt="Sweet Shop Management System - Google Chrome 27-09-2025 14_26_56" src="https://github.com/user-attachments/assets/dfc1f042-d583-4606-abf3-5b33ce63918d" />
+
 
 Registration:
-<img width="1920" height="1020" alt="Sweet Shop Management System - Google Chrome 27-09-2025 14_27_06" src="https://github.com/user-attachments/assets/2cf9825f-5e90-4bea-ac30-946d664d2515" />
+<img width="1920" height="859" alt="Sweet Shop Management System - Google Chrome 27-09-2025 14_27_06" src="https://github.com/user-attachments/assets/b89525ad-28c4-4edd-a801-02f4c96cad5a" />
+
 
 Admin Layout:
-<img width="1920" height="1020" alt="Sweet Shop Management System - Google Chrome 27-09-2025 14_27_48" src="https://github.com/user-attachments/assets/43bd4481-9700-466a-b22f-843739c7ca95" />
+<img width="1920" height="869" alt="Sweet Shop Management System - Google Chrome 27-09-2025 14_27_48" src="https://github.com/user-attachments/assets/47bcfd10-2644-4205-8711-5c77204059a1" />
+
 
 Search funtionality:
-<img width="1920" height="1020" alt="Sweet Shop Management System - Google Chrome 27-09-2025 14_28_11" src="https://github.com/user-attachments/assets/79c5a099-9b32-42b3-817d-970bd7ecf8b8" />
+<img width="1920" height="849" alt="Sweet Shop Management System - Google Chrome 27-09-2025 14_28_11" src="https://github.com/user-attachments/assets/e8756f0f-4f0f-4bd7-9412-0040b4073d48" />
+
 
 Max price limit functionality:
-<img width="1920" height="1020" alt="Sweet Shop Management System - Google Chrome 27-09-2025 14_28_35" src="https://github.com/user-attachments/assets/61c0ea7e-22a8-4ac2-ab09-7fa88619c2a6" />
+<img width="1920" height="859" alt="Sweet Shop Management System - Google Chrome 27-09-2025 14_28_35" src="https://github.com/user-attachments/assets/a807bdd8-c2e7-4889-96ce-2e6390134a2f" />
+
 
 #Purchase:
 (Before)
-<img width="1920" height="1020" alt="Sweet Shop Management System - Google Chrome 27-09-2025 14_28_47" src="https://github.com/user-attachments/assets/1f93117c-cf91-4a96-b913-1a0ff8c101b6" />
+<img width="1920" height="852" alt="Sweet Shop Management System - Google Chrome 27-09-2025 14_28_47" src="https://github.com/user-attachments/assets/0a8f1dd5-41ec-4898-87a4-83ea63c4bc47" />
+
 (After)
-<img width="1920" height="1020" alt="Sweet Shop Management System - Google Chrome 27-09-2025 14_28_54" src="https://github.com/user-attachments/assets/ac362270-a536-4092-8fa4-b6dddc296660" />
+<img width="1920" height="863" alt="Sweet Shop Management System - Google Chrome 27-09-2025 14_28_54" src="https://github.com/user-attachments/assets/d94dfed5-d557-4d95-97ba-e715e633f595" />
+
 
 #Restock:
 (Before)
-<img width="1920" height="1020" alt="Sweet Shop Management System - Google Chrome 27-09-2025 14_29_16" src="https://github.com/user-attachments/assets/b2fad371-e0bf-4e39-ae3e-b3a94ecdd0d8" />
+<img width="1920" height="866" alt="Sweet Shop Management System - Google Chrome 27-09-2025 14_29_16" src="https://github.com/user-attachments/assets/c359398e-5c77-43d3-bbaf-bd248cae2112" />
+
 (After)
-<img width="1920" height="1020" alt="Sweet Shop Management System - Google Chrome 27-09-2025 14_29_24" src="https://github.com/user-attachments/assets/2d80d912-ceec-4c03-80d7-fd70fecc798b" />
+<img width="1920" height="859" alt="Sweet Shop Management System - Google Chrome 27-09-2025 14_29_24" src="https://github.com/user-attachments/assets/6007a48c-8b49-4bbb-ac07-c642c57c5854" />
+
 
 #Adding a sweet (only admin)
-<img width="1920" height="1020" alt="Sweet Shop Management System - Google Chrome 27-09-2025 14_30_02" src="https://github.com/user-attachments/assets/43d18c2b-4cd6-4185-a126-bc5b8fb7175a" />
-<img width="1920" height="1020" alt="Sweet Shop Management System - Google Chrome 27-09-2025 14_30_12" src="https://github.com/user-attachments/assets/a9454cae-0031-4f12-bbf1-3ba9ef791ea7" />
+<img width="1920" height="876" alt="Sweet Shop Management System - Google Chrome 27-09-2025 14_30_02" src="https://github.com/user-attachments/assets/fb52025b-7873-4036-b16d-53ea248e1a49" />
+<img width="1920" height="836" alt="Sweet Shop Management System - Google Chrome 27-09-2025 14_30_12" src="https://github.com/user-attachments/assets/a3265ae4-fca3-4872-ad6f-1d64b43bf0ae" />
+
 
 #User layout:
-<img width="1920" height="1020" alt="Sweet Shop Management System - Google Chrome 27-09-2025 14_30_33" src="https://github.com/user-attachments/assets/d4e145ec-9f41-4d40-8858-856c5c537ae9" />
+<img width="1920" height="845" alt="Sweet Shop Management System - Google Chrome 27-09-2025 14_30_33" src="https://github.com/user-attachments/assets/052bce1b-30f9-4cd6-bcee-c0eff33be648" />
+
 
 
 ## My AI Usage
