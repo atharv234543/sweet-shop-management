@@ -96,7 +96,6 @@ spring.datasource.password=password
 4. **Click** the ▶️ play button in the top-right corner
 5. **Backend starts** on `http://localhost:8080`
 
-
 ### Step 4: Frontend Setup and Launch
 
 #### Method A: Using VS Code
@@ -198,53 +197,6 @@ DELETE /api/sweets/{id}   # Delete sweet
 POST /api/sweets/{id}/restock?quantity=10  # Restock sweet
 ```
 
-## 🧪 Testing
-
-### Backend Tests
-```bash
-cd sweet-shop-api
-mvn test
-```
-
-### Frontend Tests
-```bash
-cd sweet-shop-frontend
-npm run test
-```
-
-## 🔧 Troubleshooting
-
-### Common Issues & Solutions
-
-#### Backend Won't Start
-- **Check Java Version**: Ensure Java 21+ is installed (`java -version`)
-- **Check Maven**: Ensure Maven is installed (`mvn -version`)
-- **Database Connection**: Verify MySQL is running and credentials are correct
-- **Port Conflict**: Ensure port 8080 is available
-
-#### Frontend Won't Start
-- **Check Node Version**: Ensure Node.js 18+ is installed (`node -version`)
-- **Dependencies**: Run `npm install` in the frontend directory
-- **Port Conflict**: Ensure port 3000 is available
-
-#### Database Connection Issues
-- **MySQL Not Running**: Start MySQL service
-- **Wrong Credentials**: Check `application.properties`
-- **Database Not Created**: Create database with `CREATE DATABASE sweetshop;`
-
-#### CORS Errors
-- Ensure backend is running on port 8080
-- Check CORS configuration in SecurityConfig.java
-
-#### Authentication Issues
-- Clear browser localStorage and try logging in again
-- Check JWT token expiration (24 hours by default)
-
-### Development Tips
-- **Hot Reload**: Both frontend and backend support hot reload during development
-- **Browser Console**: Check for JavaScript errors in the browser console (F12)
-- **Backend Logs**: Check terminal output for Spring Boot logs and errors
-- **API Testing**: Use Postman or curl to test API endpoints directly
 
 ## 📁 Project Structure
 
@@ -298,288 +250,78 @@ SweetShopManager/
 - **Request Validation**: Input validation on both frontend and backend
 - **SQL Injection Prevention**: Parameterized queries with JPA
 
-## 🤝 Contributing
-
-We welcome contributions! Please follow these steps:
+## Screenshots :
+Login:
+<img width="1920" height="869" alt="Sweet Shop Management System - Google Chrome 27-09-2025 14_26_56" src="https://github.com/user-attachments/assets/dfc1f042-d583-4606-abf3-5b33ce63918d" />
 
-1. **Fork** the repository
-2. **Create** a feature branch: `git checkout -b feature/your-feature-name`
-3. **Make** your changes and ensure tests pass
-4. **Commit** your changes: `git commit -am 'Add some feature'`
-5. **Push** to the branch: `git push origin feature/your-feature-name`
-6. **Submit** a pull request
-
-### Development Guidelines
-- Follow existing code style and naming conventions
-- Add tests for new features
-- Update documentation as needed
-- Ensure responsive design for mobile devices
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 📞 Support
-
-If you encounter any issues or have questions:
-
-1. Check the troubleshooting section above
-2. Review the browser console and backend logs
-3. Test API endpoints with Postman
-4. Create an issue in the repository
-
-## 🎉 Acknowledgments
-
-- Built with Spring Boot and React
-- JWT implementation inspired by industry best practices
-- Responsive design patterns from modern web development
-
-## 🚀 Deployment Guide
-
-### Frontend Deployment (Vercel)
-
-#### Step 1: Prepare Frontend for Vercel
-1. **Navigate to frontend directory**:
-   ```bash
-   cd sweet-shop-frontend
-   ```
-
-2. **Create environment file**:
-   ```bash
-   # Create .env.local file
-   echo "VITE_API_BASE_URL=http://localhost:8080/api" > .env.local
-   ```
-
-3. **Test build locally**:
-   ```bash
-   npm run build
-   ```
-
-#### Step 2: Deploy to Vercel
-
-**Option A: Vercel CLI (Recommended)**
-```bash
-# Install Vercel CLI
-npm i -g vercel
-
-# Login to Vercel
-vercel login
-
-# Deploy from frontend directory
-cd sweet-shop-frontend
-vercel
-
-# Follow the prompts:
-# - Link to existing project or create new? → Create new
-# - Project name → sweet-shop-frontend
-# - Directory → ./
-```
-
-**Option B: GitHub Integration**
-1. Push your code to GitHub
-2. Go to [vercel.com](https://vercel.com)
-3. Click "Import Project"
-4. Connect your GitHub repository
-5. Vercel will automatically detect it's a Vite project
-
-#### Step 3: Configure Environment Variables in Vercel
-1. Go to your Vercel dashboard
-2. Select your project
-3. Go to Settings → Environment Variables
-4. Add:
-   ```
-   VITE_API_BASE_URL=https://your-backend-url.com/api
-   ```
-
-### Backend Deployment Options
-
-Since Vercel doesn't support Java applications, deploy your backend separately:
-
-#### Option 1: Railway (Recommended for beginners)
-```bash
-# Install Railway CLI
-npm install -g @railway/cli
-
-# Login and deploy
-railway login
-railway init
-railway up
-```
-
-#### Option 2: Heroku
-```bash
-# Install Heroku CLI
-# Create a Procfile in sweet-shop-api/:
-echo "web: java -jar target/*.jar" > Procfile
-
-# Deploy
-heroku create
-git push heroku main
-```
-
-#### Option 3: DigitalOcean App Platform
-1. Go to DigitalOcean App Platform
-2. Create new app from GitHub
-3. Configure Java build settings
-4. Set environment variables for database
-
-#### Option 4: AWS/Railway/Render
-- **Railway**: `railway up` (easiest)
-- **Render**: Connect GitHub repo, select Java
-- **AWS**: Use Elastic Beanstalk or EC2
-
-### Database Deployment
-
-#### Option 1: PlanetScale (MySQL-compatible)
-```bash
-# Create database
-# Update application.properties with PlanetScale URL
-```
-
-#### Option 2: Railway Database
-```bash
-# Railway provides free PostgreSQL, but you can use MySQL
-railway add mysql
-```
-
-#### Option 3: AWS RDS
-- Create MySQL instance
-- Update security groups
-- Use connection string in application.properties
-
-### Production Configuration
-
-#### Backend Environment Variables:
-```properties
-# Database
-spring.datasource.url=jdbc:mysql://your-db-host:3306/sweetshop
-spring.datasource.username=your_db_user
-spring.datasource.password=your_db_password
-
-# JWT
-app.jwt.secret=your-production-jwt-secret-here
-app.jwt.expiration-ms=86400000
-
-# CORS for production frontend
-spring.web.cors.allowed-origins=https://your-frontend-domain.vercel.app
-```
-
-#### Frontend Environment Variables:
-```bash
-VITE_API_BASE_URL=https://your-backend-domain.com/api
-```
-
-### Testing Production Deployment
-
-1. **Update CORS**: Add your Vercel domain to backend CORS settings
-2. **Test Registration**: Create an admin account
-3. **Test Purchases**: Add sweets and test buying
-4. **Test Admin Features**: Verify CRUD operations work
-
-### Troubleshooting Deployment
-
-#### Frontend Issues:
-- **Build fails**: Check Node.js version compatibility
-- **API calls fail**: Verify environment variables are set
-- **CORS errors**: Update backend CORS configuration
-
-#### Backend Issues:
-- **Database connection fails**: Check connection string and credentials
-- **Port conflicts**: Use default port or configure custom port
-- **Memory issues**: Increase memory limits in deployment platform
-
-#### Common Fixes:
-```bash
-# Clear build cache
-rm -rf node_modules/.vite
-npm run build
-
-# Check environment variables
-vercel env ls
-```
-
----
-
-**Happy coding! 🍬✨**
-- `GET /api/sweets/{id}` - Get sweet by ID
-- `POST /api/sweets` - Add new sweet (Admin only)
-- `PUT /api/sweets/{id}` - Update sweet (Admin only)
-- `DELETE /api/sweets/{id}` - Delete sweet (Admin only)
-
-### Inventory (Protected)
-- `POST /api/sweets/{id}/purchase` - Purchase sweet
-- `POST /api/sweets/{id}/restock` - Restock sweet (Admin only)
-
-## Testing
-
-### Backend Tests
-```bash
-cd sweet-shop-api
-mvn test
-```
-
-### Frontend Tests
-```bash
-cd sweet-shop-frontend
-npm run test
-```
-
-## Default Users
-
-After starting the application, you can register new users or use these default accounts:
-
-- **Admin User**: Register with role "ADMIN"
-- **Regular User**: Register with role "USER" (default)
-
-## Usage
-
-1. **Registration**: Create an account with username, password, and role
-2. **Login**: Authenticate to access the sweet shop
-3. **Browse**: View all available sweets
-4. **Search**: Filter sweets by name, category, or price range
-5. **Purchase**: Buy sweets (decreases inventory)
-6. **Admin Actions** (Admin users only):
-   - Add new sweets
-   - Edit existing sweets
-   - Delete sweets
-   - Restock inventory
-
-## Project Structure
-
-```
-SweetShopManager/
-├── sweet-shop-api/           # Spring Boot backend
-│   ├── src/main/java/com/sweetshop/api/
-│   │   ├── auth/             # Authentication components
-│   │   ├── config/           # Security configuration
-│   │   ├── sweet/            # Sweet management
-│   │   └── user/             # User management
-│   └── src/main/resources/   # Application properties
-└── sweet-shop-frontend/      # React frontend
-    ├── src/
-    │   ├── components/       # React components
-    │   ├── context/          # React context (Auth)
-    │   ├── pages/            # Page components
-    │   └── services/         # API services
-    └── public/               # Static assets
-```
-
-## Security Features
-
-- JWT token-based authentication
-- Password encryption with BCrypt
-- Role-based access control (USER/ADMIN)
-- Protected API endpoints
-- CORS configuration for frontend integration
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests for new features
-5. Submit a pull request
-
-## License
-
-This project is licensed under the MIT License.
+
+Registration:
+<img width="1920" height="859" alt="Sweet Shop Management System - Google Chrome 27-09-2025 14_27_06" src="https://github.com/user-attachments/assets/b89525ad-28c4-4edd-a801-02f4c96cad5a" />
+
+
+Admin Layout:
+<img width="1920" height="869" alt="Sweet Shop Management System - Google Chrome 27-09-2025 14_27_48" src="https://github.com/user-attachments/assets/47bcfd10-2644-4205-8711-5c77204059a1" />
+
+
+Search funtionality:
+<img width="1920" height="849" alt="Sweet Shop Management System - Google Chrome 27-09-2025 14_28_11" src="https://github.com/user-attachments/assets/e8756f0f-4f0f-4bd7-9412-0040b4073d48" />
+
+
+Max price limit functionality:
+<img width="1920" height="859" alt="Sweet Shop Management System - Google Chrome 27-09-2025 14_28_35" src="https://github.com/user-attachments/assets/a807bdd8-c2e7-4889-96ce-2e6390134a2f" />
+
+
+#Purchase:
+(Before)
+<img width="1920" height="852" alt="Sweet Shop Management System - Google Chrome 27-09-2025 14_28_47" src="https://github.com/user-attachments/assets/0a8f1dd5-41ec-4898-87a4-83ea63c4bc47" />
+
+(After)
+<img width="1920" height="863" alt="Sweet Shop Management System - Google Chrome 27-09-2025 14_28_54" src="https://github.com/user-attachments/assets/d94dfed5-d557-4d95-97ba-e715e633f595" />
+
+
+#Restock:
+(Before)
+<img width="1920" height="866" alt="Sweet Shop Management System - Google Chrome 27-09-2025 14_29_16" src="https://github.com/user-attachments/assets/c359398e-5c77-43d3-bbaf-bd248cae2112" />
+
+(After)
+<img width="1920" height="859" alt="Sweet Shop Management System - Google Chrome 27-09-2025 14_29_24" src="https://github.com/user-attachments/assets/6007a48c-8b49-4bbb-ac07-c642c57c5854" />
+
+
+#Adding a sweet (only admin)
+<img width="1920" height="876" alt="Sweet Shop Management System - Google Chrome 27-09-2025 14_30_02" src="https://github.com/user-attachments/assets/fb52025b-7873-4036-b16d-53ea248e1a49" />
+<img width="1920" height="836" alt="Sweet Shop Management System - Google Chrome 27-09-2025 14_30_12" src="https://github.com/user-attachments/assets/a3265ae4-fca3-4872-ad6f-1d64b43bf0ae" />
+
+
+#User layout:
+<img width="1920" height="845" alt="Sweet Shop Management System - Google Chrome 27-09-2025 14_30_33" src="https://github.com/user-attachments/assets/052bce1b-30f9-4cd6-bcee-c0eff33be648" />
+
+## Tests:
+For service test : 15 of 15 test cases passed:
+<img width="1920" height="436" alt="Sweet Management System – SweetServiceTest java  sweet-shop-api  Administrator 27-09-2025 15_08_50" src="https://github.com/user-attachments/assets/0aca1fd7-c5d5-4126-989b-401221456c30" />
+
+For model test : 2 of 2 test cases passed:
+<img width="1920" height="245" alt="Sweet Management System – SweetServiceTest java  sweet-shop-api  Administrator 27-09-2025 15_09_37" src="https://github.com/user-attachments/assets/e02b84c5-84bc-494b-b25d-421cf62316ec" />
+
+For repository test : 18 of 18 test cases passed:
+<img width="1920" height="471" alt="Sweet Management System – SweetServiceTest java  sweet-shop-api  Administrator 27-09-2025 15_14_48" src="https://github.com/user-attachments/assets/874aa20c-baf3-4924-9014-4102a53f7646" />
+
+## My AI Usage
+
+### 1. **Gemini (Google AI)**
+**Purpose**: Project structure design and enhancement
+- **Initial Design**: Designed the overall project architecture and structure
+- **Enhancement**: Added JWT authentication module and security configuration
+- **Modules Added**: Authentication system, security configurations, user management structure
+
+### 2. **ChatGPT (OpenAI)**
+**Purpose**: Frontend development
+- **Complete Frontend Generation**: Generated the entire frontend codebase from scratch
+- **Technologies Used**: React, Vite, React Router, Axios, CSS3
+- **Components Created**: All UI components, pages, forms, layouts, and styling
+
+### Backend Development (AI-Leveraged Implementation)
+
+I had comprehensive knowledge of backend architecture, business logic, and system requirements. Rather than writing code from scratch, I strategically leveraged AI as a development accelerator while maintaining full control over the design and implementation approach.
+
+## Tests
+Leveraged AI to generate unit test cases for backend . Like for model ,repo, service and controller layer . 
