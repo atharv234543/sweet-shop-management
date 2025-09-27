@@ -96,7 +96,6 @@ spring.datasource.password=password
 4. **Click** the ▶️ play button in the top-right corner
 5. **Backend starts** on `http://localhost:8080`
 
-
 ### Step 4: Frontend Setup and Launch
 
 #### Method A: Using VS Code
@@ -296,10 +295,33 @@ Max price limit functionality:
 #User layout:
 <img width="1920" height="845" alt="Sweet Shop Management System - Google Chrome 27-09-2025 14_30_33" src="https://github.com/user-attachments/assets/052bce1b-30f9-4cd6-bcee-c0eff33be648" />
 
+## Tests:
+For service test : 15 of 15 test cases passed:
+<img width="1920" height="436" alt="Sweet Management System – SweetServiceTest java  sweet-shop-api  Administrator 27-09-2025 15_08_50" src="https://github.com/user-attachments/assets/0aca1fd7-c5d5-4126-989b-401221456c30" />
 
+For model test : 2 of 2 test cases passed:
+<img width="1920" height="245" alt="Sweet Management System – SweetServiceTest java  sweet-shop-api  Administrator 27-09-2025 15_09_37" src="https://github.com/user-attachments/assets/e02b84c5-84bc-494b-b25d-421cf62316ec" />
+
+For repository test : 18 of 18 test cases passed:
+<img width="1920" height="471" alt="Sweet Management System – SweetServiceTest java  sweet-shop-api  Administrator 27-09-2025 15_14_48" src="https://github.com/user-attachments/assets/874aa20c-baf3-4924-9014-4102a53f7646" />
 
 ## My AI Usage
 
-1. I designed the project structure and used Gemini to enhance it and add some more modules like "JWT Module and Config" . 
-2. I used Chatgpt to generate the full frontend code from scratch . Also , I knew my backend logic and required functionalities in the backend API. So , I instructed that logic to AI and got the relevant results. Though it lacked in some places , so I added the logic manually there . Most of work from my side was done in backend and full AI generated code in frontend .
+### 1. **Gemini (Google AI)**
+**Purpose**: Project structure design and enhancement
+- **Initial Design**: Designed the overall project architecture and structure
+- **Enhancement**: Added JWT authentication module and security configuration
+- **Modules Added**: Authentication system, security configurations, user management structure
 
+### 2. **ChatGPT (OpenAI)**
+**Purpose**: Frontend development
+- **Complete Frontend Generation**: Generated the entire frontend codebase from scratch
+- **Technologies Used**: React, Vite, React Router, Axios, CSS3
+- **Components Created**: All UI components, pages, forms, layouts, and styling
+
+### Backend Development (AI-Leveraged Implementation)
+
+I had comprehensive knowledge of backend architecture, business logic, and system requirements. Rather than writing code from scratch, I strategically leveraged AI as a development accelerator while maintaining full control over the design and implementation approach.
+
+## Tests
+Leveraged AI to generate unit test cases for backend . Like for model ,repo, service and controller layer . 
